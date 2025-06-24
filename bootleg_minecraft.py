@@ -13,7 +13,7 @@ class BootlegMinecraft:
         for rows in range(20):
             for columns in range(20):
                 block = Button(color=color.white, model='cube', position=(columns,0,rows),
-                            texture=self.texture, parent=scene, origin_y=0.5)
+                            texture='images/grass.png', parent=scene, origin_y=0.5)
                 self.blocks.append(block)
 
     def place_block(self, block):
