@@ -24,3 +24,6 @@ class BootlegMinecraft:
                 elif key == 'right mouse down':
                     self.blocks.remove(block)
                     destroy(block)
+
+    def start(self):
+        self.app.run()
