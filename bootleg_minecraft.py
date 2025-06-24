@@ -13,3 +13,14 @@ class BootlegMinecraft:
                 block = Button(color=color.white, model='cube', position=(columns,0,rows),
                             texture='grass.png', parent=scene, origin_y=0.5)
                 self.blocks.append(block)
+
+    def key_input(self, key):
+        for block in self.blocks:
+            if block.hovered:
+                if key == 'left mouse down':
+                    new_block = Button(color=color.white, model='cube', position=block.position + mouse.normal,
+                                texture='grass.png', parent=scene, origin_y=0.5)
+                    self.blocks.append(new_block)
+                elif key == 'right mouse down':
+                    self.blocks.remove(block)
+                    destroy(block)
