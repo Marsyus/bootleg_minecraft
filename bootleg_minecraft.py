@@ -6,7 +6,9 @@ class BootlegMinecraft:
         self.player = FirstPersonController()
         Sky()
         self.blocks = []
+        self.generate_world()
 
+    def generate_world(self):
         for rows in range(20):
             for columns in range(20):
                 block = Button(color=color.white, model='cube', position=(columns,0,rows),
