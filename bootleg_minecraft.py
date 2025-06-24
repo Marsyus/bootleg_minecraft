@@ -7,17 +7,18 @@ class BootlegMinecraft:
         Sky()
         self.blocks = []
         self.generate_world()
+        self.texture = 'images/grass.png'
 
     def generate_world(self):
         for rows in range(20):
             for columns in range(20):
                 block = Button(color=color.white, model='cube', position=(columns,0,rows),
-                            texture='images/grass.png', parent=scene, origin_y=0.5)
+                            texture=self.texture, parent=scene, origin_y=0.5)
                 self.blocks.append(block)
 
     def place_block(self, block):
         new_block = Button(color=color.white, model='cube', position=block.position + mouse.normal,
-                                texture='images/grass.png', parent=scene, origin_y=0.5)
+                                texture=self.texture, parent=scene, origin_y=0.5)
         self.blocks.append(new_block)
 
     def destroy_block(self, block):
@@ -25,6 +26,17 @@ class BootlegMinecraft:
         destroy(block)
 
     def key_input(self, key):
+        if key == '1':
+            self.texture = 'images/grass.png'
+        if key == '2':
+            self.texture = 'images/dirt.png'
+        if key == '3':
+            self.texture = 'images/cobble.png'
+        if key == '4':
+            self.texture = 'images/stone.png'
+        if key == '5':
+            self.texture = 'images/wood.png'
+        
         for block in self.blocks:
             if block.hovered:
                 if key == 'left mouse down':
