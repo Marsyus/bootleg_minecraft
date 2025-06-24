@@ -1,4 +1,11 @@
+from ursina import *
 from bootleg_minecraft import BootlegMinecraft
 
+app = Ursina()
+
 game = BootlegMinecraft()
-game.start()
+
+def input(key):
+    game.key_input(key)
+
+app.run()

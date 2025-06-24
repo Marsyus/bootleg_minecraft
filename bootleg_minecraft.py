@@ -3,7 +3,6 @@ from ursina.prefabs.first_person_controller import FirstPersonController
 
 class BootlegMinecraft:
     def __init__(self):
-        self.app = Ursina()
         self.player = FirstPersonController()
         Sky()
         self.blocks = []
@@ -24,6 +23,3 @@ class BootlegMinecraft:
                 elif key == 'right mouse down':
                     self.blocks.remove(block)
                     destroy(block)
-
-    def start(self):
-        self.app.run()
