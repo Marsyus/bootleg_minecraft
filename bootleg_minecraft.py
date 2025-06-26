@@ -22,8 +22,8 @@ class BootlegMinecraft:
             return 'images/flower_3.png'
 
     def generate_world(self):
-        for rows in range(20):
-            for columns in range(20):
+        for rows in range(-10, 10):
+            for columns in range(-10, 10):
                 block = Button(color=color.white, model='cube', position=(columns,0,rows),
                             texture=self.random_grass(), parent=scene, origin_y=0.5)
                 self.blocks.append(block)
