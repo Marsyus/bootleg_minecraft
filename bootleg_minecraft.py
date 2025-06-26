@@ -1,5 +1,6 @@
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
+import random
 
 class BootlegMinecraft:
     def __init__(self):
@@ -9,11 +10,22 @@ class BootlegMinecraft:
         self.generate_world()
         self.texture = 'images/grass.png'
 
+    def random_grass(self):
+        rand = random.randint(0, 3)
+        if rand == 0:
+            return 'images/grass.png'
+        if rand == 1:
+            return 'images/flower_1.png'
+        if rand == 2:
+            return 'images/flower_2.png'
+        if rand == 3:
+            return 'images/flower_3.png'
+
     def generate_world(self):
         for rows in range(20):
             for columns in range(20):
                 block = Button(color=color.white, model='cube', position=(columns,0,rows),
-                            texture='images/grass.png', parent=scene, origin_y=0.5)
+                            texture=self.random_grass(), parent=scene, origin_y=0.5)
                 self.blocks.append(block)
 
     def place_block(self, block):
