@@ -8,7 +8,6 @@ class BootlegMinecraft:
         Sky()
         self.blocks = []
         self.generate_world()
-        self.texture = 'images/grass.png'
 
     def random_grass(self):
         rand = random.randint(0, 100)
