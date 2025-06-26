@@ -11,14 +11,14 @@ class BootlegMinecraft:
         self.texture = 'images/grass.png'
 
     def random_grass(self):
-        rand = random.randint(0, 3)
-        if rand == 0:
+        rand = random.randint(0, 100)
+        if 0 <= rand < 86:
             return 'images/grass.png'
-        if rand == 1:
+        if 86 <= rand < 91:
             return 'images/flower_1.png'
-        if rand == 2:
+        if 91 <= rand < 96:
             return 'images/flower_2.png'
-        if rand == 3:
+        if 96 <= rand <= 100:
             return 'images/flower_3.png'
 
     def generate_world(self):
